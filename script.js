@@ -904,11 +904,29 @@
     }
     try{if(localStorage.getItem('rec-hidden')==='1')root.classList.add('is-hidden');}catch(e){}
 
+    // Rec never sits on (or below) the footer: when the footer scrolls into
+    // view he's lifted above it, and drops back to his spot when it leaves.
+    function floorY(){
+      var lim=window.innerHeight-60,f=document.querySelector('.footer');
+      if(f){var ft=f.getBoundingClientRect().top-12;if(ft<lim)lim=ft;}
+      return lim;
+    }
+    // Rec is anchored by his feet, so his speech bubble always grows upward
+    root._bot=60;
+    function place(){
+      var lift=window.innerHeight-floorY();
+      root.style.bottom=Math.max(root._bot,lift)+'px';
+    }
+    var placeQueued=0;
+    function queuePlace(){if(!placeQueued){placeQueued=1;requestAnimationFrame(function(){placeQueued=0;place();});}}
+    window.addEventListener('scroll',queuePlace,{passive:true});
+    window.addEventListener('resize',queuePlace);
+
     // click Rec = open/close the menu; drag Rec = move him around the screen
     var drag=null;
     me.addEventListener('pointerdown',function(e){
       if(e.button!==0)return;
-      var r=root.getBoundingClientRect();
+      var r=me.getBoundingClientRect();
       drag={sx:e.clientX,sy:e.clientY,l:r.left,t:r.top,moved:false};
       me.setPointerCapture(e.pointerId);
     });
@@ -918,8 +936,11 @@
       if(!drag.moved&&Math.abs(dx)+Math.abs(dy)<5)return;
       drag.moved=true;root.classList.add('dragging');
       var W=window.innerWidth,H=window.innerHeight,bw=me.offsetWidth,bh=me.offsetHeight;
-      var nl=Math.max(4,Math.min(W-bw-4,drag.l+dx)),nt=Math.max(60,Math.min(H-bh-50,drag.t+dy));
-      root.style.left=nl+'px';root.style.top=nt+'px';root.style.right='auto';root.style.bottom='auto';
+      var nl=Math.max(4,Math.min(W-bw-4,drag.l+dx));
+      var feet=Math.max(60+bh,Math.min(floorY(),drag.t+dy+bh));   // y of Rec's bottom edge
+      root._bot=H-feet;                                           // remembered distance from screen bottom
+      root.style.left=nl+'px';root.style.right='auto';root.style.top='auto';
+      place();
       root.classList.toggle('flip',nl<W/2);
     });
     function endDrag(){
@@ -947,6 +968,7 @@
       },2500);
     }
     return {
+      place:place,
       toggle:function(){
         if(root.classList.contains('is-hidden')){setHidden(false);say('I\'m back! 😊 What can I do for you?',true);}
         else{close();setHidden(true);}
@@ -967,6 +989,7 @@
     var y=document.getElementById('yr');
     if(y)y.textContent=new Date().getFullYear();
     tick();
+    if(typeof buddy!=='undefined'&&buddy)buddy.place();
     // animate any loading bar (the "rendering…" window)
     [].forEach.call(document.querySelectorAll('.loadbar'),function(lb){
       var cells=lb.querySelectorAll('i'),k=6;
