@@ -421,3 +421,6 @@ body.is-loading,body.is-loading *{cursor:progress!important}
 
 /* mobile: no Rec or Jukebox in the Start menu */
 @media (max-width:860px),(hover:none){.sm-buddy,.sm-juke{display:none!important}}
+
+/* inline pixel smiley (replaces the ☺ text character, which renders squished) */
+.px-smile{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.22em;image-rendering:pixelated}

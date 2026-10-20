@@ -100,7 +100,7 @@
       '<div class="sm-side">FORRESTER<b>95</b></div>'+
       '<div class="sm-items">'+
         '<a href="index.html">🏠 Home</a>'+
-        '<a href="about.html">☺ About</a>'+
+        '<a href="about.html"><img class=\"px-smile\" src=\"assets/favicon.svg\" alt=\"\"> About</a>'+
         '<a href="work.html">▶ Work</a>'+
         '<a href="gallery.html">◉ Gallery</a>'+
         '<a href="links.html">✦ Links</a>'+
@@ -108,7 +108,7 @@
         '<hr>'+
         '<button class="sm-game">🎮 Reel Runner</button>'+
         '<button class="sm-juke">📻 Jukebox</button>'+
-        '<button class="sm-buddy">☺ Rec the helper</button>'+
+        '<button class="sm-buddy"><img class=\"px-smile\" src=\"assets/favicon.svg\" alt=\"\"> Rec the helper</button>'+
         '<button class="sm-sound"></button>'+
         '<hr>'+
         '<div class="sm-closed-wrap"><div class="sm-label">Closed windows</div><div class="sm-closed"></div></div>'+
@@ -803,7 +803,7 @@
       "Why did the movie extra get promoted? He really stood out in the background. 🧍",
       "I told my camera a secret. Now it won't stop flashing everyone. 😳"
     ];
-    var HELLO=["Hi! I'm Rec ☺ What can I do for you?","Lights, camera… you clicked me! What'll it be?","Rec here, rolling and ready. Pick one!"];
+    var HELLO=["Hi! I'm Rec 😊 What can I do for you?","Lights, camera… you clicked me! What'll it be?","Rec here, rolling and ready. Pick one!"];
     // 12x12 pixel smiley (same face as the site logo). k=ink y=yellow
     var BODY=[
       "...kkkkkk...",
@@ -948,7 +948,7 @@
     }
     return {
       toggle:function(){
-        if(root.classList.contains('is-hidden')){setHidden(false);say('I\'m back! ☺ What can I do for you?',true);}
+        if(root.classList.contains('is-hidden')){setHidden(false);say('I\'m back! 😊 What can I do for you?',true);}
         else{close();setHidden(true);}
       }
     };
