@@ -1,0 +1,1 @@
+Put your own images here (gallery photos, logo, etc.) and reference them like: assets/your-image.jpg
