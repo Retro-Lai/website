@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery · MATTHEW FORRESTER</title>
+<meta name="description" content="Gallery — Matthew Forrester, photographer &amp; videographer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* gallery-only grid */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.gal .win{margin:0}
+.gal .pic{height:210px;display:grid;place-items:center;font-size:2.6rem;color:var(--ink);
+  border-bottom:var(--bw) solid var(--ink)}
+.gal .pic img{width:100%;height:100%;object-fit:cover}
+.p1{background:linear-gradient(135deg,var(--cyan),var(--green))}
+.p2{background:linear-gradient(135deg,var(--magenta),var(--orange))}
+.p3{background:linear-gradient(135deg,var(--yellow),var(--cyan))}
+.p4{background:linear-gradient(135deg,var(--red),var(--orange))}
+.p5{background:linear-gradient(135deg,var(--green),var(--yellow))}
+.p6{background:linear-gradient(135deg,var(--blue),var(--cyan))}
+.gal .cap{padding:10px 14px;font-size:.8rem;font-weight:700;text-transform:uppercase}
+@media(max-width:860px){.gal{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.gal{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="menubar">
+  <div class="inner">
+    <a href="index.html" class="brand"><span class="blip"></span> FORRESTER.AVI</a>
+    <nav class="nav" id="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="links.html">Links</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <span class="clock" id="clock">--:--</span>
+    <button class="navtoggle" id="navtoggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="sectitle" style="margin-top:40px"><h2>Gallery</h2><span class="line"></span></div>
+  <p class="muted" style="margin:-10px 0 26px">Swap each gradient for your own image: replace the coloured block with <code>&lt;img src="assets/your-pic.jpg"&gt;</code>.</p>
+
+  <div class="gal">
+    <!-- EDIT: put an <img> inside .pic to use a real photo -->
+    <figure class="win"><div class="pic p1">✦</div><figcaption class="cap">image-01.jpg</figcaption></figure>
+    <figure class="win"><div class="pic p2">★</div><figcaption class="cap">image-02.jpg</figcaption></figure>
+    <figure class="win"><div class="pic p3">♥</div><figcaption class="cap">image-03.jpg</figcaption></figure>
+    <figure class="win"><div class="pic p4">◆</div><figcaption class="cap">image-04.jpg</figcaption></figure>
+    <figure class="win"><div class="pic p5">✿</div><figcaption class="cap">image-05.jpg</figcaption></figure>
+    <figure class="win"><div class="pic p6">▷</div><figcaption class="cap">image-06.jpg</figcaption></figure>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="inner">
+    <span>© <span id="yr">2026</span> MATTHEW FORRESTER · photographer &amp; videographer</span>
+    <div class="soc"><a href="#" title="Instagram">IG</a><a href="https://www.youtube.com/@bekindrewindproductions" title="YouTube" target="_blank" rel="noopener">YT</a></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulacrum · MATTHEW FORRESTER</title>
+<meta name="description" content="Simulacrum — A grieving computer science student finds a strange floppy disk containing an artificial intelligence. A film by Matthew Forrester.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="menubar">
+  <div class="inner">
+    <a href="index.html" class="brand"><span class="blip"></span> FORRESTER.AVI</a>
+    <nav class="nav" id="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="work.html" class="active">Work</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="links.html">Links</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <span class="clock" id="clock">--:--</span>
+    <button class="navtoggle" id="navtoggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="sectitle" style="margin-top:40px"><h2>Simulacrum</h2><span class="line"></span></div>
+  <p style="margin:-8px 0 24px"><a href="work.html" class="btn" style="padding:8px 16px;font-size:.78rem">← Back to Work</a></p>
+
+  <div class="projlayout vid">
+    <div class="projleft">
+      <!-- details -->
+      <div class="win" style="margin:0">
+        <div class="bar orange"><span class="ttl">details.txt</span></div>
+        <div class="body">
+          <!-- EDIT: fill in or change any of these -->
+          <div class="stats">
+            <div><span>Year</span><b>2023</b></div>
+            <div><span>Runtime</span><b>34:32</b></div>
+            <div><span>Role</span><b>Writer · Director · Camera · Editor</b></div>
+          </div>
+          <div class="detailfoot">
+            <p><span class="tag">Film</span><span class="tag">Indie</span></p>
+            <a href="https://www.youtube.com/watch?v=_sYQNARjg8E" class="btn red" target="_blank" rel="noopener" style="padding:8px 14px;font-size:.75rem">▶ Watch on YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- video -->
+      <div class="win" style="margin:0">
+        <div class="bar"><span class="dots"><span class="y"></span><span class="m"></span><span class="c"></span></span><span class="ttl">player.exe — Simulacrum</span></div>
+        <!-- EDIT: to change the video, swap the ID after /embed/ -->
+        <div class="player">
+          <iframe src="https://www.youtube-nocookie.com/embed/_sYQNARjg8E" title="Simulacrum" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- description -->
+    <div class="win" style="margin:0">
+      <div class="bar cyan"><span class="ttl">info.txt</span></div>
+      <div class="body prose">
+        <!-- EDIT: tell the story of this project -->
+        <p><b>Simulacrum</b></p>
+        <p>A grieving computer science student finds a strange floppy disk containing an artificial intelligence. What follows is an exploration of good and evil, innocent and guilty, and what it means to be human.</p>
+        <h3>Behind the film</h3>
+        <p>I started Simulacrum my freshman year of college and finished it my junior year. I wrote and directed it with the goal of capturing the feel of the 80s B-movies I love.</p>
+        <p>I designed the costumes and sets to feel authentic to the 80s as people actually lived it, not the idealized, neon-soaked version we usually see. Then I edited the whole film to look like it was shot on VHS.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="win" style="margin-top:34px">
+    <div class="bar yellow"><span class="ttl">next.exe</span></div>
+    <div class="body" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+      <p>Next up: <b>Portrait Photography</b></p>
+      <a href="portrait-photography.html" class="btn magenta">Next Project →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="inner">
+    <span>© <span id="yr">2026</span> MATTHEW FORRESTER · photographer &amp; videographer</span>
+    <div class="soc"><a href="#" title="Instagram">IG</a><a href="https://www.youtube.com/@bekindrewindproductions" title="YouTube" target="_blank" rel="noopener">YT</a></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
